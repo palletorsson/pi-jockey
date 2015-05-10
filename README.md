@@ -37,6 +37,9 @@ $ cd pi-jocky
 
 * Configure your router to force ip adresses to mac-adresses of each Raspberry (media station) 
 
+Rename your pi name like this so they conflict when foring ip: 
+* http://www.howtogeek.com/167195/how-to-change-your-raspberry-pi-or-other-linux-devices-hostname/
+
 * Restart the each media station  
 
 * On each media-server waiting for requests: 
