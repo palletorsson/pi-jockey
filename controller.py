@@ -30,6 +30,6 @@ while True:
     except: 
         print "Request Error"
 
-    time.sleep(3) # wait for 3 second 
+    time.sleep(5) # wait for 5 second 
 
 
