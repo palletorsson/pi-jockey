@@ -4,7 +4,7 @@ import time
 
 print "Server started"
 #videofileplaying = False
-video_filename = "bigbuck.mp4"
+video_filename = "white.mp4"
 
 app = Flask(__name__)
 
