@@ -29,7 +29,7 @@ def startVideo(video_id=None):
 @app.route("/video/stop/")
 def stopVideo():
     return_string = "Test : Video stop"
-    blackclip=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,"video/"+settings.DEFAULT_VIDEO_TRAN], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
+    blackclip=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,"video/"+settings.DEFAULT_VIDEO_TRANS], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
     print "Test : Stopping video"
     try:
         videofileplaying.stdin.write('q')
