@@ -12,18 +12,20 @@ Install pip, flask and python script, etc.
 
 1.1 Change your host name.
 
+Do:
 $ sudo nano /etc/hosts
 
-- change 127.0.1.1 		raspberrypi
-- to 127.0.1.1 			pi-n
+change: 127.0.1.1 		raspberrypi
+to: 127.0.1.1 			pi-n
 
 (here n is a number)
 Exit and save
 
+Do:
 * $ sudo nano /etc/hostname
 
-raspberrypi
-to pi-n
+change: raspberrypi
+to: pi-n
 
 (here n is a number)
 Exit and save
@@ -41,8 +43,10 @@ Exit and save
 2. Configure your router (from another computer logon to the wireless network)
 
 * What is your Mac adress. Enter.
-- $ ifconfig
-Not your Mac adress. 
+
+$ ifconfig
+
+(Note your Mac adress) 
 
 * Log on to the wireless network 192.168.0.1 
 
@@ -79,15 +83,15 @@ Exit and save
 set 
 hdmi_drive=2
  
-9. Edit pything files
+9. Edit python script
 
 * Add video to the video directory in the pi-jocky directory:
 * Configure the script media-server.py matching the video name (will be a separate config file soon)
 * Add ip to the hosts_list for each Raspberry media-server.py script.
 
-8. Add media and configure the media-server. 
+10. Add media and configure the media-server. 
 
-9. Restart and test the pi
+11. Restart and test the pi
 
 
 

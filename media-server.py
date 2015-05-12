@@ -1,16 +1,17 @@
 from flask import Flask
 import subprocess
 import time
+import settings
+
+print settings.DEFAULT_VIDEO
 
 print "Server started"
-#videofileplaying = False
-video_filename = "white.mp4"
 
 app = Flask(__name__)
 
 
-@app.route("/video/start/")
-def startVideo():
+@app.route("/video/start/<int:video_id>/")
+def startVideo(video_id=None):
     print "Incoming video request"
     global videofileplaying
 
@@ -22,13 +23,13 @@ def startVideo():
     except:
         print "no video playing"
 
-    videofileplaying=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,"video/"+video_filename], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
+    videofileplaying=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,"video/"+settings.DEFAULT_VIDEO], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
     return "Video file played, lol"
 
 @app.route("/video/stop/")
 def stopVideo():
     return_string = "Test : Video stop"
-    blackclip=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,"video/black.mp4"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
+    blackclip=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,"video/"+settings.DEFAULT_VIDEO_TRAN], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
     print "Test : Stopping video"
     try:
         videofileplaying.stdin.write('q')

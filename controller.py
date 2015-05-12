@@ -5,7 +5,7 @@ import time
 hosts_list =  ["192.168.0.120:5000"] #,"192.168.0.101:5000","192.168.0.102:5000"]
 
 # How long is the video?
-video_length = 5
+video_length = 7
 startup_time = 10 
 
 time.sleep(startup_time) # wait for other ip:s to start
@@ -33,6 +33,6 @@ while True:
     except: 
         print "Request Error"
 
-    time.sleep(5) # wait for 5 second 
+    time.sleep(3) # wait for 5 second 
 
 
