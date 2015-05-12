@@ -14,6 +14,13 @@ app = Flask(__name__)
 def startVideo(video_id=None):
     print "Incoming video request"
     global videofileplaying
+    try:
+        return_code = transclip.poll()
+        if return_code == None:
+            transclip.stdin.write('q')
+            print "Transition was playing, video file stopped"
+    except:
+        print "no transvideo playing"
 
     try:
         return_code = videofileplaying.poll()
@@ -28,10 +35,15 @@ def startVideo(video_id=None):
 
 @app.route("/video/stop/")
 def stopVideo():
+    global transclip
+
+
     return_string = "Test : Video stop"
     blackclip=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,"video/"+settings.DEFAULT_VIDEO_TRANS], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
     print "Test : Stopping video"
+
     try:
+       
         videofileplaying.stdin.write('q')
         return_string = return_string + " >>  Video stopped"
         print "Video stopped"
