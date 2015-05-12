@@ -2,11 +2,11 @@ import urllib2
 import time 
 
 # list the ip:s
-hosts_list =  ["192.168.0.100:5000"] #,"192.168.0.101:5000","192.168.0.102:5000"]
+hosts_list =  ["192.168.0.120:5000"] #,"192.168.0.101:5000","192.168.0.102:5000"]
 
 # How long is the video?
-video_length = 60 
-startup_time = 20
+video_length = 5
+startup_time = 10 
 
 time.sleep(startup_time) # wait for other ip:s to start
 
