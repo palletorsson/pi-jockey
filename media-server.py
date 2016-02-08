@@ -44,7 +44,7 @@ def randVideo(video_id=None):
 
     videopath = mypath+"/"+onlyfiles[randing]
 
-    videofileplaying=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,videopath, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
+    videofileplaying=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" , videopath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
     return "Video file played, lol"
 
 
@@ -72,7 +72,7 @@ def startVideo(video_id=None):
     except:
         randing = 1
 
-    videofileplaying=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,mypath+"/"+str(video_id), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
+    videofileplaying=subprocess.Popen(["omxplayer", "-b" ,"-o", "hdmi" ,mypath+"/"+str(video_id)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
     return "Video file played, lol"
 
 @app.route("/video/stop/")
