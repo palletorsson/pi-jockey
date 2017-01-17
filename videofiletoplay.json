@@ -1,0 +1,27 @@
+
+videoplay = [{
+	"name": "rulz_no_rules",
+	"file": "test.mp4",
+	"starttime": 0,
+	"lenght": "7",
+	"camera": 1
+}, {
+	"name": "no_",
+	"file": "test2.mp4",
+	"starttime": 1,
+	"lenght": "12",
+	"camera": 2
+}, {
+	"name": "no_rules",
+	"file": "test6.mp4",
+	"starttime": 8,
+	"lenght": "33",
+	"camera": 1
+},
+{
+	"name": "no_",
+	"file": "test4.mp4",
+	"starttime": 14,
+	"lenght": "34",
+	"camera": 2
+}, ]
