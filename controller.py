@@ -1,38 +1,31 @@
 import urllib2
+from threading import Thread
 import time 
+import settings
+import json 
 
 # list the ip:s
-hosts_list =  ["192.168.0.130:5000"] #,"192.168.0.101:5000","192.168.0.102:5000"]
-
-# How long is the video?
-video_length = 7
-startup_time = 10 
-
+hosts_list =  ["0.0.0.0:5000"] #,"192.168.0.101:5000","192.168.0.102:5000"]
+host = '127.0.0.1:5000'
+startup_time = 2
 time.sleep(startup_time) # wait for other ip:s to start
 
-# Loop until we stop the program
-while True: 
-    try:
-        for host in hosts_list:      
-            url = "http://" + host +"/video/start/1/"
-            response = urllib2.urlopen(url)
-        print "Video start - requested"
+videos = settings.video_timing['videos'] 
 
-    except: 
-        print "Request Error, start video @ " + host
+def open_url(url):
+    response = urllib2.urlopen(url)   
 
-    time.sleep(video_length) # wait for length of the video in minuter
+time.sleep(3)
 
-    try:
-        for host in hosts_list: 
-            url = "http://" + host +"/video/stop/"
-            response = urllib2.urlopen(url)
+for video in videos:   
+    
 
-        print "video stop requested"
+    url = "http://" + host +"/video/go/" + video['file'] + "/" + video['start_at'] + "/" + video['length']
+    print url
 
-    except: 
-        print "Request Error, stop video @ " + host
-
-    time.sleep(3) # wait for 5 second 
-
+    Thread(target=open_url, args=[url]).start()
+    
+    print "requested video: " + video['file']
+    #video_nr = video_nr + 1
+    time.sleep(float(video['length']) -2.0)
 

@@ -8,12 +8,20 @@ import os
 
 # Videos
 
-Video = {
-    'video_1': {
-        'name': 'rulz_no_rules',
-        'file': 'test.mp4',
-        'lenght': '230',
-    }
+video_timing = {
+    'videos': [
+    {
+        'file': 'big_buck_bunny_720_stereo.mp4',
+        'length': '10',
+        'start_at': '60',
+        'screen': '1'
+    }, 
+    {
+        'file': 'AR_CHINACITY_2_512kb.mp4', 
+        'length': '7',
+        'start_at': '0',
+        'screen': '1'     
+    }]
 }
 
 # Sound
@@ -31,7 +39,7 @@ PROJECT_ROOT        = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 VIDEO_ROOT          = os.path.join(PROJECT_ROOT, 'video')
 SOUND_ROOT          = os.path.join(PROJECT_ROOT, 'sound')
 
-DEFAULT_VIDEO 		= 'white.mp4'
+DEFAULT_VIDEO 		= 'AR_TURNMANGA_512kb.mp4'
 DEFAULT_VIDEO_TRANS = 'black.mp4'
 
 
